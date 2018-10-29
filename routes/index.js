@@ -9,6 +9,6 @@ const usersController = require('../controllers/users')
 router.get('/', applicationController.index)
 
 router.get('/user', usersController.index)
-
+router.get('/user/new', usersController.new)
 
 module.exports = router
