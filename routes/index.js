@@ -8,8 +8,7 @@ const usersController = require('../controllers/users')
 /* GET home page. */
 router.get('/', applicationController.index)
 
-router.get('/users', usersController.index)
-
+router.get('/user', usersController.index)
 
 
 module.exports = router
