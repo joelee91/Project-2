@@ -30,6 +30,11 @@ const productsController = {
 		Product.findByIdAndUpdate(req.params.Id, req.body).then((updatedProducts) => {
 			res.redirect(`/${updatedProducts._id}`)
 		})
+	},
+	delete: (req, res) => {
+		Product.findByIdAndRemove(req.params.id).then(() => {
+			res.redirect('/')
+		})
 	}
 }
 
