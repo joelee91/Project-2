@@ -10,6 +10,8 @@ router.get('/', applicationController.index)
 
 router.get('/user', usersController.index)
 
-router.get('/inventory', categorysController.index)
+router.get('/categorys', categorysController.index)
+router.get('/categorys/:categorysId', categorysController.show)
+
 
 module.exports = router
