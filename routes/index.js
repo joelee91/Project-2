@@ -20,9 +20,9 @@ router.get('/categorys/:categorysId/:subcategorysId', subcategorysController.sho
 router.get('/products', productsController.index)
 router.get('/user/new', productsController.new)
 router.get('/categorys/:categorysId/:subcategorysId/:productsId', productsController.show)
-router.post('/user', productsController.create)
+router.post('/user/products/create', productsController.create)
 router.get('/user/:productsId/edit', productsController.edit)
-router.put('/user/:productsId', productsController.update)
-router.delete('/user/:productsId', productsController.delete)
+router.put('/user/:productsId/update', productsController.update)
+router.delete('/user/:productsId/delete', productsController.delete)
 
 module.exports = router
