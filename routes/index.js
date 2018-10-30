@@ -12,6 +12,6 @@ router.get('/user', usersController.index)
 
 router.get('/categorys', categorysController.index)
 router.get('/categorys/:categorysId', categorysController.show)
-
+router.get('/categorys/:categorysId/subcategorys', subcategorysController.index)
 
 module.exports = router
