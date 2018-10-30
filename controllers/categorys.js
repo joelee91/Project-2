@@ -8,7 +8,7 @@ const categorysController = ({
 	},
 	show: (req, res) => {
 		const categoryId = req.params.categorysId
-		Category.findbyId(categoryId).populate('subcategorys')
+		Category.findById(categoryId).populate('subcategorys')
 		.then((category) => {
 			res.render('categorys/show', { category: category})
 		})

@@ -4,12 +4,6 @@ const Subcategory = require('../models/Subcategory.js')
 const User = require('../models/User.js')
 const mongoose = require('./connections')
 
-const joe = new User({
-	email: "asdf",
-	username: "adsf",
-	password: "adsf",
-	inventory: [menShirts]
-})
 
 const menShirts = new Product({
 	title: "asdf",
@@ -102,13 +96,20 @@ const fashion = new Category({
 	subcategories: [women, men]
 })
 
+const joe = new User({
+	email: "asdf",
+	username: "adsf",
+	password: "adsf",
+	inventory: [menShirts]
+})
+
 Category.remove({})
 	.then(() => Subcategory.insertMany([men, women, games, tv]))
 	.then(() => technology.save())
 	.then(() => fashion.save())
 	.then(() => console.log("Category seeded"))
 Subcategory.remove({})
-	.then(() => Product.insertMany([menshirts, menPants, womenShirts, womenPants, samsung, vizio, spiderman, batman]))
+	.then(() => Product.insertMany([menShirts, menPants, womenShirts, womenPants, samsung, vizio, spiderman, batman]))
 	.then(() => men.save())
 	.then(() => women.save())
 	.then(() => games.save())
