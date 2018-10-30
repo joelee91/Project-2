@@ -13,7 +13,14 @@ router.get('/user', usersController.index)
 
 router.get('/categorys', categorysController.index)
 router.get('/categorys/:categorysId', categorysController.show)
+
+
 router.get('/categorys/:categorysId/:subcategorysId', subcategorysController.show)
+
+router.get('/products', productsController.index)
+router.get('/user/new', productsController.new)
 router.get('/categorys/:categorysId/:subcategorysId/:productsId', productsController.show)
+router.post('/user', productsController.create)
+router.get('/user/:productsId', productsController.edit)
 
 module.exports = router
