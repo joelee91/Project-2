@@ -97,24 +97,25 @@ const fashion = new Category({
 })
 
 const joe = new User({
-	email: "asdf",
-	username: "adsf",
-	password: "adsf",
+	email: "forks",
+	username: "Joe",
+	password: "whatever",
 	inventory: [menShirts]
 })
-
-Category.remove({})
+User.remove({})
+	.then(() => Product.remove({}))
+	.then(() => Category.remove({}))
+	.then(() => Subcategory.remove({}))
+	.then(() => Product.insertMany([menShirts, menPants, womenShirts, womenPants, samsung, vizio, spiderman, batman]))
 	.then(() => Subcategory.insertMany([men, women, games, tv]))
 	.then(() => technology.save())
 	.then(() => fashion.save())
 	.then(() => console.log("Category seeded"))
-Subcategory.remove({})
-	.then(() => Product.insertMany([menShirts, menPants, womenShirts, womenPants, samsung, vizio, spiderman, batman]))
 	.then(() => men.save())
 	.then(() => women.save())
 	.then(() => games.save())
 	.then(() => tv.save())
+	.then(() => joe.save())
 	.then(() => console.log("Subcategory seeded"))
-User.remove({})
-	.then(() => Product.insertMany([menShirts]))
+	// .then(() => Product.insertMany([menShirts]))
 	.then(() => mongoose.connection.close())
