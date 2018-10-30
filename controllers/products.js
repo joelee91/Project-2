@@ -26,7 +26,11 @@ const productsController = {
 			res.render('products/edit', { products: products })
 		})
 	},
-	update:
+	update: (req, res) => {
+		Product.findByIdAndUpdate(req.params.Id, req.body).then((updatedProducts) => {
+			res.redirect(`/${updatedProducts._id}`)
+		})
+	}
 }
 
 module.exports = productsController

@@ -22,6 +22,7 @@ router.get('/user/new', productsController.new)
 router.get('/categorys/:categorysId/:subcategorysId/:productsId', productsController.show)
 router.post('/user', productsController.create)
 router.get('/user/:productsId/edit', productsController.edit)
-router.put('')
+router.put('/user/:productsId', productsController.update)
+router.delete('/user/:productsId', productsController.delete)
 
 module.exports = router
