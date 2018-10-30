@@ -3,6 +3,7 @@ var router = express.Router();
 const applicationController = require('../controllers/application')
 const usersController = require('../controllers/users')
 const categorysController = require('../controllers/categorys')
+const subcategorysController = require('../controllers/subcategorys')
 
 
 /* GET home page. */
@@ -12,6 +13,6 @@ router.get('/user', usersController.index)
 
 router.get('/categorys', categorysController.index)
 router.get('/categorys/:categorysId', categorysController.show)
-router.get('/categorys/:categorysId/subcategorys', subcategorysController.index)
+router.get('/categorys/:categorysId/"subcategorysId', subcategorysController.show)
 
 module.exports = router
