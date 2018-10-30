@@ -11,7 +11,7 @@ const User = new Schema({
 	inventory: [
 		{
 			type: Schema.Types.ObjectId,
-			ref: 'Inventory'
+			ref: 'Product'
 		}
 	]
 })
