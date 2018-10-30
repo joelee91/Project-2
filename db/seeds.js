@@ -8,7 +8,7 @@ const joe = new User({
 	email: "asdf",
 	username: "adsf",
 	password: "adsf",
-	inventory: []
+	inventory: [menShirts]
 })
 
 const menShirts = new Product({
